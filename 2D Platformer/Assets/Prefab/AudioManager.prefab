@@ -80,3 +80,45 @@ MonoBehaviour:
     randomVolume: 0
     randomPitch: 0
     loop: 0
+  - name: DefaultShot
+    clip: {fileID: 8300000, guid: c6716efad0e32864f8488569615ad3aa, type: 3}
+    volume: 0.7
+    pitch: 1
+    randomVolume: 0.1
+    randomPitch: 0.1
+    loop: 0
+  - name: Explosion
+    clip: {fileID: 8300000, guid: 3bca13e9598441443b232b910b06da1e, type: 3}
+    volume: 0.7
+    pitch: 1
+    randomVolume: 0.1
+    randomPitch: 0.1
+    loop: 0
+  - name: DeathVoice
+    clip: {fileID: 8300000, guid: 02ad7322c57bc784c81503f349f94967, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomVolume: 0
+    randomPitch: 0
+    loop: 0
+  - name: DamageVoice
+    clip: {fileID: 8300000, guid: 732a02a2fb42e1a4686d045b75597903, type: 3}
+    volume: 0.4
+    pitch: 1
+    randomVolume: 0.1
+    randomPitch: 0
+    loop: 0
+  - name: GameOver
+    clip: {fileID: 8300000, guid: 6182aa7a4889fb64db0daad7be103362, type: 3}
+    volume: 0.7
+    pitch: 1
+    randomVolume: 0
+    randomPitch: 0
+    loop: 0
+  - name: LandingFootsteps
+    clip: {fileID: 8300000, guid: 9a69b8f2fdfcd014da7a8662d91c9e84, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomVolume: 0.2
+    randomPitch: 0.1
+    loop: 0
