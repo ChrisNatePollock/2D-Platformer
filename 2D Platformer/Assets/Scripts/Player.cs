@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets._2D;
 
+[RequireComponent(typeof(Platformer2DUserControl))]
 public class Player : MonoBehaviour {
 
     [System.Serializable]
@@ -39,6 +41,8 @@ public class Player : MonoBehaviour {
             statusIndicator.SetHealth(playerStats.curHealth, playerStats.maxHealth);
         }
 
+        GameMaster.gm.onToggleUpgradeMenu += OnUpgradeMenuToggle;
+
         audioManager = AudioManager.instance;
         if(audioManager == null) {
             Debug.LogError("No audioManager found in scene");
@@ -49,6 +53,18 @@ public class Player : MonoBehaviour {
         if (transform.position.y <= fallBoundary) {
             DamagePlayer(9999999);
         }
+    }
+
+    void OnUpgradeMenuToggle(bool active) {
+        GetComponent<Platformer2DUserControl>().enabled = !active;
+        Weapon _weapon = GetComponentInChildren<Weapon>();
+        if(_weapon != null) {
+            _weapon.enabled = !active;
+        }
+    }
+
+    void OnDestroy() {
+        GameMaster.gm.onToggleUpgradeMenu -= OnUpgradeMenuToggle;
     }
 
     public void DamagePlayer(int damage) {
