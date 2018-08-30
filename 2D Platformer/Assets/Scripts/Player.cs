@@ -6,22 +6,7 @@ using UnityStandardAssets._2D;
 [RequireComponent(typeof(Platformer2DUserControl))]
 public class Player : MonoBehaviour {
 
-    [System.Serializable]
-    public class PlayerStats {
-        public int maxHealth = 100;
-
-        private int _curHealth;
-        public int curHealth {
-            get { return _curHealth; }
-            set { _curHealth = Mathf.Clamp(value, 0, maxHealth); }
-        }
-
-        public void Init() {
-            curHealth = maxHealth;
-        }
-    }
-
-    public PlayerStats playerStats = new PlayerStats();
+     
 
     public int fallBoundary = -20;
 
@@ -33,12 +18,17 @@ public class Player : MonoBehaviour {
     [SerializeField]
     private StatusIndicator statusIndicator;
 
+    private PlayerStats stats;
+
     void Start() {
-        playerStats.Init();
+        stats = PlayerStats.instance;
+
+        stats.curHealth = stats.maxHealth;
+
         if(statusIndicator == null) {
             Debug.LogError("No status indicator referenced on player");
         }else {
-            statusIndicator.SetHealth(playerStats.curHealth, playerStats.maxHealth);
+            statusIndicator.SetHealth(stats.curHealth, stats.maxHealth);
         }
 
         GameMaster.gm.onToggleUpgradeMenu += OnUpgradeMenuToggle;
@@ -47,6 +37,14 @@ public class Player : MonoBehaviour {
         if(audioManager == null) {
             Debug.LogError("No audioManager found in scene");
         }
+
+        InvokeRepeating("RegenHealth", 1f/stats.regenRate, 1f/stats.regenRate);
+    }
+
+    void RegenHealth()
+    {
+        stats.curHealth += 1;
+        statusIndicator.SetHealth(stats.curHealth, stats.maxHealth);
     }
 
     void Update () {
@@ -68,8 +66,8 @@ public class Player : MonoBehaviour {
     }
 
     public void DamagePlayer(int damage) {
-        playerStats.curHealth -= damage;
-        if (playerStats.curHealth <= 0) {
+        stats.curHealth -= damage;
+        if (stats.curHealth <= 0) {
             //play death sound
             audioManager.PlaySound(deathSoundName);
 
@@ -80,6 +78,6 @@ public class Player : MonoBehaviour {
             audioManager.PlaySound(damageSoundName);
         }
 
-        statusIndicator.SetHealth(playerStats.curHealth, playerStats.maxHealth);
+        statusIndicator.SetHealth(stats.curHealth, stats.maxHealth);
     }
 }
