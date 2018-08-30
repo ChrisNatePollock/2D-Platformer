@@ -679,6 +679,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114853466994773798, guid: f1557fa9eedad9b4a9c7d9941f3d2386,
+        type: 2}
+      propertyPath: sounds.Array.size
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 4397385107215024, guid: f1557fa9eedad9b4a9c7d9941f3d2386, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -710,6 +715,66 @@ Prefab:
     - target: {fileID: 4397385107215024, guid: f1557fa9eedad9b4a9c7d9941f3d2386, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114853466994773798, guid: f1557fa9eedad9b4a9c7d9941f3d2386,
+        type: 2}
+      propertyPath: sounds.Array.data[10].name
+      value: NoMoney
+      objectReference: {fileID: 0}
+    - target: {fileID: 114853466994773798, guid: f1557fa9eedad9b4a9c7d9941f3d2386,
+        type: 2}
+      propertyPath: sounds.Array.data[10].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3215c7fe9e20b2d45b9b3fd3fc5a3268, type: 3}
+    - target: {fileID: 114853466994773798, guid: f1557fa9eedad9b4a9c7d9941f3d2386,
+        type: 2}
+      propertyPath: sounds.Array.data[10].volume
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114853466994773798, guid: f1557fa9eedad9b4a9c7d9941f3d2386,
+        type: 2}
+      propertyPath: sounds.Array.data[10].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114853466994773798, guid: f1557fa9eedad9b4a9c7d9941f3d2386,
+        type: 2}
+      propertyPath: sounds.Array.data[10].randomVolume
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114853466994773798, guid: f1557fa9eedad9b4a9c7d9941f3d2386,
+        type: 2}
+      propertyPath: sounds.Array.data[10].randomPitch
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114853466994773798, guid: f1557fa9eedad9b4a9c7d9941f3d2386,
+        type: 2}
+      propertyPath: sounds.Array.data[11].name
+      value: Money
+      objectReference: {fileID: 0}
+    - target: {fileID: 114853466994773798, guid: f1557fa9eedad9b4a9c7d9941f3d2386,
+        type: 2}
+      propertyPath: sounds.Array.data[11].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 819bc7f583a7fa143a7132c9b755c4e5, type: 3}
+    - target: {fileID: 114853466994773798, guid: f1557fa9eedad9b4a9c7d9941f3d2386,
+        type: 2}
+      propertyPath: sounds.Array.data[11].volume
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114853466994773798, guid: f1557fa9eedad9b4a9c7d9941f3d2386,
+        type: 2}
+      propertyPath: sounds.Array.data[11].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114853466994773798, guid: f1557fa9eedad9b4a9c7d9941f3d2386,
+        type: 2}
+      propertyPath: sounds.Array.data[11].randomVolume
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114853466994773798, guid: f1557fa9eedad9b4a9c7d9941f3d2386,
+        type: 2}
+      propertyPath: sounds.Array.data[11].randomPitch
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f1557fa9eedad9b4a9c7d9941f3d2386, type: 2}
@@ -2343,6 +2408,7 @@ MonoBehaviour:
   speedText: {fileID: 1897460832}
   healthMultiplier: 1.3
   speedMultiplier: 1.3
+  upgradeCost: 50
 --- !u!1 &853012443
 GameObject:
   m_ObjectHideFlags: 0
@@ -2662,16 +2728,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114625679872939108, guid: 8fb65c37976a15a45bb05f9800433156,
-        type: 2}
-      propertyPath: gameOverUI
-      value: 
-      objectReference: {fileID: 1732081685}
-    - target: {fileID: 114625679872939108, guid: 8fb65c37976a15a45bb05f9800433156,
-        type: 2}
-      propertyPath: upgradeMenu
-      value: 
-      objectReference: {fileID: 839147018}
     - target: {fileID: 114383176709650092, guid: 8fb65c37976a15a45bb05f9800433156,
         type: 2}
       propertyPath: backgrounds.Array.data[0]
@@ -2687,6 +2743,16 @@ Prefab:
       propertyPath: backgrounds.Array.data[2]
       value: 
       objectReference: {fileID: 1593703948}
+    - target: {fileID: 114625679872939108, guid: 8fb65c37976a15a45bb05f9800433156,
+        type: 2}
+      propertyPath: gameOverUI
+      value: 
+      objectReference: {fileID: 1732081685}
+    - target: {fileID: 114625679872939108, guid: 8fb65c37976a15a45bb05f9800433156,
+        type: 2}
+      propertyPath: upgradeMenu
+      value: 
+      objectReference: {fileID: 839147018}
     - target: {fileID: 114855988865685522, guid: 8fb65c37976a15a45bb05f9800433156,
         type: 2}
       propertyPath: spawnPoints.Array.data[0]
@@ -3025,7 +3091,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 32
+    m_FontSize: 27
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -3036,9 +3102,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'UPGRADE
-
-'
+  m_Text: "UPGRADE \n(50)\n"
 --- !u!222 &1294415923
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3113,25 +3177,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1378185802}
---- !u!1 &1396631014 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1385321160336844, guid: 8fb65c37976a15a45bb05f9800433156,
-    type: 2}
-  m_PrefabInternal: {fileID: 1023480702}
---- !u!114 &1396631015
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1396631014}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b3892fa22b7d404db6ed444e46b368a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  regenRate: 2
-  movementSpeed: 10
 --- !u!114 &1476427280 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114855988865685522, guid: 8fb65c37976a15a45bb05f9800433156,
@@ -4413,7 +4458,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 32
+    m_FontSize: 27
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -4424,9 +4469,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'UPGRADE
-
-'
+  m_Text: "UPGRADE \n(50)\n"
 --- !u!222 &2078773206
 CanvasRenderer:
   m_ObjectHideFlags: 0
